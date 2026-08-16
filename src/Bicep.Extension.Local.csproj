@@ -18,7 +18,7 @@
 
   <ItemGroup>
     <PackageReference Include="Azure.Bicep.Local.Extension" Version="0.46.1" />
-    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="10.0.301" PrivateAssets="All"/>
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="10.0.400" PrivateAssets="All"/>
     <PackageReference Include="Nerdbank.GitVersioning" Version="3.10.91" />
   </ItemGroup>
 </Project>
