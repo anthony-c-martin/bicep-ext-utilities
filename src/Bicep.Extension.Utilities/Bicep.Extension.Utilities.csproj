@@ -1,8 +1,8 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Bicep.Extension.Local</RootNamespace>
-    <AssemblyName>bicep-ext-local</AssemblyName>
+    <RootNamespace>Bicep.Extension.Utilities</RootNamespace>
+    <AssemblyName>bicep-ext-utilities</AssemblyName>
     <IncludeNativeLibrariesForSelfExtract>true</IncludeNativeLibrariesForSelfExtract>
     <PublishSingleFile>true</PublishSingleFile>
     <SelfContained>true</SelfContained>

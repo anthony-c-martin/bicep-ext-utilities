@@ -1,8 +1,8 @@
-# Local Bicep Extension
+# Bicep Utilities Extension
 
 ## Usage
 
-1. Download the [Samples folder](https://download-directory.github.io/?url=https%3A%2F%2Fgithub.com%2Fanthony-c-martin%2Fbicep-ext-local%2Ftree%2Fmain%2Fsamples), and unzip it.
+1. Download the [Samples folder](https://download-directory.github.io/?url=https%3A%2F%2Fgithub.com%2Fanthony-c-martin%2Fbicep-ext-utilities%2Ftree%2Fmain%2Fsamples), and unzip it.
 1. Open the unzipped Samples folder in VSCode, and select one of the `.bicepparam` files you wish to deploy.
 1. Launch the [Deploy Pane](https://github.com/Azure/bicep/blob/main/docs/experimental/deploy-ui.md) to run the deployment.
 
@@ -20,8 +20,8 @@
 ### Rebuild the extension
 These commands publish the extension to the local file system, and updates the sample bicepconfig to point to the local extension.
 ```sh
-./scripts/publish.sh ./bin/bicep-ext-local
-jq '.extensions.local="../bin/bicep-ext-local"' ./samples/bicepconfig.json > ./samples/bicepconfig.new.json
+./scripts/publish.sh ./bin/bicep-ext-utilities
+jq '.extensions.utilities="../bin/bicep-ext-utilities"' ./samples/bicepconfig.json > ./samples/bicepconfig.new.json
 mv ./samples/bicepconfig.new.json ./samples/bicepconfig.json
 ```
 
@@ -46,9 +46,9 @@ $env:BICEP_TRACING_ENABLED = "true"
 
 Releases are cut manually so that versioning stays under explicit control. Run the **Release** workflow from the Actions tab (or with `gh workflow run release.yml -f version=0.2.0`) and supply the exact version to publish.
 
-The workflow validates the version, builds and tests, publishes `br:ghcr.io/anthony-c-martin/bicep-ext-local:<version>`, and then creates a `v`-prefixed git tag and GitHub Release. The workflow refuses to replace an existing release and only runs from `main`.
+The workflow validates the version, builds and tests, publishes `br:ghcr.io/anthony-c-martin/bicep-ext-utilities:<version>`, and then creates a `v`-prefixed git tag and GitHub Release. The workflow refuses to replace an existing release and only runs from `main`.
 
-The version supplied to the workflow is stamped into the binary via `-p:Version=`. Local builds use the placeholder `0.0.1-dev` version from [src/Bicep.Extension.Local.csproj](./src/Bicep.Extension.Local.csproj).
+The version supplied to the workflow is stamped into the binary via `-p:Version=`. Local builds use the placeholder `0.0.1-dev` version from [src/Bicep.Extension.Utilities.csproj](./src/Bicep.Extension.Utilities/Bicep.Extension.Utilities.csproj).
 
 To configure this repository's GitHub branch protection and collaborators, log in with the `gh` CLI and run:
 

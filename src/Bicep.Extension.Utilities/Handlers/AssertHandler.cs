@@ -1,9 +1,9 @@
 using System.Text.Json;
 using System.Text.Json.Nodes;
-using Bicep.Extension.Local;
+using Bicep.Extension.Utilities;
 using Bicep.Local.Extension.Host.Handlers;
 
-namespace Bicep.Extension.Local.Handlers;
+namespace Bicep.Extension.Utilities.Handlers;
 
 public class AssertHandler : TypedResourceHandler<AssertResource, AssertResourceIdentifiers>
 {

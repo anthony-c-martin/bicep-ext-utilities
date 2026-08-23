@@ -1,13 +1,13 @@
 using Microsoft.AspNetCore.Builder;
 using Bicep.Local.Extension.Host.Extensions;
-using Bicep.Extension.Local.Handlers;
+using Bicep.Extension.Utilities.Handlers;
 using Azure.Bicep.Types.Concrete;
 using Microsoft.Extensions.DependencyInjection;
-using Bicep.Extension.Local;
+using Bicep.Extension.Utilities;
 using System.Reflection;
 
 var assembly = typeof(Program).Assembly;
-var assemblyName = assembly.GetName().Name ?? "bicep-ext-local";
+var assemblyName = assembly.GetName().Name ?? "bicep-ext-utilities";
 var informationalVersion = assembly.GetCustomAttribute<AssemblyInformationalVersionAttribute>()?.InformationalVersion
     ?? assembly.GetName().Version?.ToString()
     ?? "0.0.0";

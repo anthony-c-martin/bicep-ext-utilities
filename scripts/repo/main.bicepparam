@@ -5,5 +5,5 @@ using 'main.bicep'
 param githubToken = readEnvironmentVariable('GITHUB_TOKEN')
 
 param owner = 'anthony-c-martin'
-param repoName = 'bicep-ext-local'
+param repoName = 'bicep-ext-utilities'
 param collaborators = []

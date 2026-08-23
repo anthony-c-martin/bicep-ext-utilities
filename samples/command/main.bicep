@@ -1,6 +1,6 @@
 targetScope = 'local'
 
-extension local
+extension utilities
 
 resource sayHello 'Command' = {
   command: 'gh auth status'

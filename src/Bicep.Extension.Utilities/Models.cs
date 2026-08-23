@@ -2,7 +2,7 @@ using System.Text.Json.Serialization;
 using Azure.Bicep.Types.Concrete;
 using Bicep.Local.Extension.Types.Attributes;
 
-namespace Bicep.Extension.Local;
+namespace Bicep.Extension.Utilities;
 
 public class WaitResourceIdentifiers
 {

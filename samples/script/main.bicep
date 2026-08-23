@@ -1,6 +1,6 @@
 targetScope = 'local'
 
-extension local
+extension utilities
 
 param name string
 param platform 'Bash' | 'PowerShell'

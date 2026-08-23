@@ -7,7 +7,7 @@
 To iterate on changes to the extensions (e.g. changing or adding models or handlers), use the following flow:
 * Make changes
 * Build the solution using `dotnet build .`. This'll typically run a lot faster for catching C# errors than runnig a full publish.
-* Run `./scripts/publish.ps1 ./bicep-ext-local` to publish the self-contained extension to `./bicep-ext-local`.
+* Run `./scripts/publish.ps1 ./bicep-ext-utilities` to publish the self-contained extension to `./bicep-ext-utilities`.
 * Modify `./samples/bicepconfig.json` to use the local extension instead of the one from the registry. For example:
     ```json
     {
@@ -15,7 +15,7 @@ To iterate on changes to the extensions (e.g. changing or adding models or handl
         "localDeploy": true
       },
       "extensions": {
-        "local": "../bicep-ext-local"
+        "utilities": "../bicep-ext-utilities"
       },
       "implicitExtensions": []
     }

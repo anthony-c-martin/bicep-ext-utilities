@@ -1,6 +1,6 @@
 targetScope = 'local'
 
-extension local
+extension utilities
 
 resource assert 'Assert' = {
   name: 'This should fail!'

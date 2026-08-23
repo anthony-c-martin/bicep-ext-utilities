@@ -23,8 +23,10 @@ jobs:
         uses: actions/setup-dotnet@v6
 
       - name: Build
-        run: |
-          dotnet build
+        run: dotnet build
+
+      - name: Test
+        run: dotnet test
 
   publish-local:
     name: Publish Locally
@@ -35,12 +37,12 @@ jobs:
 
       - name: Setup .NET Core
         uses: actions/setup-dotnet@v6
-  
-      - name: Intall Bicep
-        run: |
-          az config set bicep.use_binary_from_path=false
-          az bicep install
+
+      - name: Setup Bicep
+        uses: anthony-c-martin/setup-bicep@v1
+        with:
+          version: 0.45.6
         
       - name: Publish Locally
         run: |
-          bash scripts/publish.sh bicep-ext-local
+          bash scripts/publish.sh bicep-ext-utilities

@@ -6,7 +6,7 @@
       "type": "coreclr",
       "request": "launch",
       "preLaunchTask": "Build Solution",
-      "program": "${workspaceFolder}/src/bin/Debug/bicep-ext-local",
+      "program": "${workspaceFolder}/src/Bicep.Extension.Utilities/bin/Debug/net10.0/osx-arm64/bicep-ext-utilities",
       "args": [
         "--http",
         "8080"

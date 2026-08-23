@@ -5,7 +5,7 @@ using System.Text.Json.Nodes;
 using System.Text.Json.Serialization;
 using Bicep.Local.Extension.Host.Handlers;
 
-namespace Bicep.Extension.Local.Handlers;
+namespace Bicep.Extension.Utilities.Handlers;
 
 public class CommandHandler : TypedResourceHandler<CommandResource, CommandResourceIdentifiers>
 {
