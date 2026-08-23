@@ -7,7 +7,9 @@
     <OutputType>Exe</OutputType>
     <IsPackable>false</IsPackable>
     <IsTestProject>true</IsTestProject>
+    <!-- Run on Microsoft.Testing.Platform (MTP) with the MSTest runner. -->
     <EnableMSTestRunner>true</EnableMSTestRunner>
+    <!-- The referenced extension project is self-contained; allow referencing it from tests. -->
     <ValidateExecutableReferencesMatchSelfContained>false</ValidateExecutableReferencesMatchSelfContained>
   </PropertyGroup>
 
