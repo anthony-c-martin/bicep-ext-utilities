@@ -10,7 +10,7 @@
     "currentProfile": "AzureCloud"
   },
   "extensions": {
-    "local": "br:ghcr.io/anthony-c-martin/bicep-ext-local:0.1.16"
+    "local": "br:ghcr.io/anthony-c-martin/bicep-ext-local:0.0.1"
   },
   "implicitExtensions": []
 }

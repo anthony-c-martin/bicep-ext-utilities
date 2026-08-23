@@ -9,11 +9,11 @@
 > [!NOTE]
 > Extension binary packages are not signed on a Mac. If you see the following error, you will need to manually sign the extension package:
 > 
-> `Failed to launch provider: Failed to connect to provider /Users/ant/.bicep/br/bicepextdemo.azurecr.io/extensions$local/0.1.1$/extension.bin`
+> `Failed to launch provider: Failed to connect to provider .../extension.bin`
 > 
 > To work around it, run the following in a terminal window, using the path from the error message:
 > 
-> `codesign -s - '/Users/ant/.bicep/br/bicepextdemo.azurecr.io/extensions$local/0.1.1$/extension.bin'`
+> `codesign -s - '<path from the error message>'`
 
 ## Build + Test Locally
 
@@ -42,17 +42,19 @@ When using PowerShell, use the snippet below to enable verbose tracing:
 $env:BICEP_TRACING_ENABLED = "true"
 ```
 
-## Publishing to a registry
-This repo is set up with GitHub Actions to publish a new version to an ACR on every push to the `main` branch.
+## Releasing
 
-To pick up a new version after publishing, view the [Publish Extension output](https://github.com/anthony-c-martin/bicep-ext-local/actions/workflows/publish.yml), and update your bicepconfig.json to use the new spec:
+Releases are cut manually so that versioning stays under explicit control. Run the **Release** workflow from the Actions tab (or with `gh workflow run release.yml -f version=0.2.0`) and supply the exact version to publish.
 
-![publish extension output](./docs/publish_extension_output.png)
+The workflow validates the version, builds and tests, publishes `br:ghcr.io/anthony-c-martin/bicep-ext-local:<version>`, and then creates a `v`-prefixed git tag and GitHub Release. The workflow refuses to replace an existing release and only runs from `main`.
 
-### First time setup
-To configure the GitHub Actions automation for the first time:
+The version supplied to the workflow is stamped into the binary via `-p:Version=`. Local builds use the placeholder `0.0.1-dev` version from [src/Bicep.Extension.Local.csproj](./src/Bicep.Extension.Local.csproj).
 
-Log in to Azure CLI. Customize and run `./scripts/initial_setup.sh`.
+To configure this repository's GitHub branch protection and collaborators, log in with the `gh` CLI and run:
+
+```powershell
+./scripts/setup.ps1
+```
 
 ## Building other extensions
 
