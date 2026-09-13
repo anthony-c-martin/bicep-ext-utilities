@@ -19,7 +19,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Azure.Bicep.Local.Extension" Version="0.46.1" />
+    <PackageReference Include="Azure.Bicep.Local.Extension" Version="0.47.16" />
     <PackageReference Include="Microsoft.SourceLink.GitHub" Version="10.0.400" PrivateAssets="All"/>
   </ItemGroup>
 </Project>
